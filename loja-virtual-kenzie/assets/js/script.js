@@ -16,7 +16,7 @@ const vitrineCarrinho = document.querySelector(".carrinho ul")
 //CONCEITO DE CAPTURING 
 //cardProduto.forEach((buttonComprar)=> buttonComprar.addEventListener("click", adicionarProdutoCarrinho))
 
-
+//ADICIONANDO INTERCEPTADOR NA VITRINE DE PRODUTOS
 const vitrineProdutos  = document.querySelector(".vitrineProdutos__vitrine")
 vitrineProdutos.addEventListener("click", interceptandoEvento)
 
@@ -28,15 +28,21 @@ function interceptandoEvento(evt){
     if(buttonComprar.tagName === "BUTTON"){
 
        const cadProduto = buttonComprar.closest("li")
+        
+        //PASSANDO PRODUTO/CARRINHO POR PARAMETRO
         addicionarProdutoCarrinho(cadProduto,vitrineCarrinho)
 
     }
     
 }
+
+//ADICIONANDO PRODUTO NO CARRINHO
 function addicionarProdutoCarrinho(produto,carrinho){
     carrinho.appendChild(produto)
 }
 
+
+//EXEMPLO DAS DIVS BUBLING 
 const div1 = document.getElementById("div1")
 div1.addEventListener("click", function(){
     setTimeout(() => {
