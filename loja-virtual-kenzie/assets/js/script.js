@@ -62,6 +62,8 @@ const listarProdutos = (arrayProdutos, callTemplateProduto, vitrine)=>{
 listarProdutos(dataProdutos, templateProduto, vitrinePrincipal)
 
 
+//ADICIONANDO INTERCEPTADOR NA VITRINE DE PRODUTOS
+const vitrineProdutos  = document.querySelector(".vitrineProdutos__vitrine")
 
 //FUNÇÃO PARA INTERCEPTAR CLIQUE
 vitrinePrincipal.addEventListener("click", interceptandoEvento)
@@ -70,10 +72,8 @@ function interceptandoEvento(evt){
     const buttonComprar = evt.target 
     if(buttonComprar.tagName === "BUTTON"){
 
-        console.log("oi")
+        
 
     }
     
 }
-
-
