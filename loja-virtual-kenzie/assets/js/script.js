@@ -1,80 +1,79 @@
 const vitrineCarrinho = document.querySelector(".carrinho ul")
+const vitrinePrincipal  = document.querySelector(".vitrineProdutos__vitrine")
 
-//const cardProduto  = document.querySelectorAll(".vitrineProdutos__vitrine li button")
 
-// for(let i = 0; i<cardProduto.length; i++){
+//1 FUNÇÃO PARA MONTAR TEMPLATE DO PRODUTO *
+  //VALIDAR PRODUTO EM PROMOÇÃO *
+  //PRODUTO EM ESTOQUE  *
+  //TRATAR DO PREÇO *
+  
+//3 FUNÇÃO PARA LISTAR OS PRODUTOS
+//A) PERCORRER O ARRAY DE OBJETOS,PASSANDO O CADA PRODUTO PARA FUNÇÃO TEMPLTE
+//B) ADICIONAR NA VITRINE
+
+
+//FUNÇÃO PARA CRIAR TEMPLATE DE PRODUTO => PRECISA RECEBER UM OBJETO PRODUTO
+const templateProduto = ({id,produtoNome,imageUrl,preco,precoPromocional,oferta}) => {
     
-//     cardProduto[i].addEventListener("click", adicionarProdutoCarrinho)
+    //CRIANDO ELEMENTOS HTML
+    const li                = document.createElement("li")
+    const img               = document.createElement("img")
+    const h2                = document.createElement("h2")
+    const precoProduto      = document.createElement("p")
+    const precoPromo        = document.createElement("p")
+    const button            = document.createElement("button")
+    
+    //ATRIBUINDO VALORES PARA OS ELEMENTOS
+    h2.innerText            = produtoNome
+    img.src                 = imageUrl
+    img.alt                 = produtoNome
+    precoProduto.innerText  = `R$ ${preco.replace(".",",")}`
+    precoPromo.innerText    = `R$ ${precoPromocional.replace(".",",")}`
+    button.innerText        = "Comprar"
+    button.setAttribute("data-id", id)
+    
+    //ADICIONANDO ELEMENTOS NO TEMPLATE => LI
+    li.classList.add("vitrineProdutos__vitrine__produto")
+    li.appendChild(img)
+    li.appendChild(h2)
+    li.appendChild(precoProduto)
+    if(oferta){
+        li.appendChild(precoPromo)
+        li.classList.add("promocao")
+    }
+    li.appendChild(button)
+    
+    return li
+}
 
-// }
+//FUNÇÃO PARA LISTAR PRODUTOS NA VITRINE
+//array de objetos 
+//função template
+//vitrine
 
-// cardProduto.forEach(function(buttonComprar){
-//     buttonComprar.addEventListener("click", adicionarProdutoCarrinho)
-// })
+const listarProdutos = (arrayProdutos, callTemplateProduto, vitrine)=>{
+   
+    arrayProdutos.forEach(function(produto){
+        const templateProduto  = callTemplateProduto(produto)
+       vitrine.appendChild(templateProduto)
+    });
+
+}
+listarProdutos(dataProdutos, templateProduto, vitrinePrincipal)
 
 
-//CONCEITO DE CAPTURING 
-//cardProduto.forEach((buttonComprar)=> buttonComprar.addEventListener("click", adicionarProdutoCarrinho))
 
-
-const vitrineProdutos  = document.querySelector(".vitrineProdutos__vitrine")
-vitrineProdutos.addEventListener("click", interceptandoEvento)
-
+//FUNÇÃO PARA INTERCEPTAR CLIQUE
+vitrinePrincipal.addEventListener("click", interceptandoEvento)
 function interceptandoEvento(evt){
     
-    //evt.target//CAPTURING
-    //evt.currentTarget//Bubling
     const buttonComprar = evt.target 
     if(buttonComprar.tagName === "BUTTON"){
 
-       const cadProduto = buttonComprar.closest("li")
-        addicionarProdutoCarrinho(cadProduto,vitrineCarrinho)
+        console.log("oi")
 
     }
     
 }
-function addicionarProdutoCarrinho(produto,carrinho){
-    carrinho.appendChild(produto)
-}
-
-const div1 = document.getElementById("div1")
-div1.addEventListener("click", function(){
-    setTimeout(() => {
-        div1.style.background = "blue"
-    }, 1200);   
-})
-
-const div2 = document.getElementById("div2")
-div2.addEventListener("click", function(){
-    setTimeout(() => {
-        div2.style.background = "blue"
-    }, 1000);
-})
-
-const div3 = document.getElementById("div3")
-div3.addEventListener("click", function(evt){
-    
-    setTimeout(() => {
-        div3.style.background = "blue"
-    }, 900);
-
-    
-})
-
-const div4 = document.getElementById("div4")
-div4.addEventListener("click", function(evt){
-    setTimeout(() => {
-        div4.style.background = "blue"
-    }, 800);
-    evt.stopPropagation()
-})
-
-const div5 = document.getElementById("div5")
-div5.addEventListener("click", function(){
-    setTimeout(() => {
-        div5.style.background = "blue"  
-    }, 700);
-   
-})
 
 

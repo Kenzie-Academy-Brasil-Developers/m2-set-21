@@ -12,7 +12,7 @@ const dataProdutos = [
     {
         "id":20,
         "produtoNome":"Fone",
-        "imageUrl":"./src/img/fone.jpg",
+        "imageUrl":"./assets/img/fone.jpg",
          "preco":"150.00",
         "precoPromocional":"150.00",
         "oferta":false,
@@ -22,7 +22,7 @@ const dataProdutos = [
      {
         "id":200,
          "produtoNome":"Blusa",
-         "imageUrl":"./src/img/blusa.jpg",
+         "imageUrl":"./assets/img/blusa.jpg",
           "preco":"150.00",
          "precoPromocional":"150.00",
          "oferta":false,
@@ -33,7 +33,7 @@ const dataProdutos = [
       {
         "id":40,
          "produtoNome":"Camiseta",
-         "imageUrl":"./src/img/camiseta.jpg",
+         "imageUrl":"./assets/img/camiseta.jpg",
           "preco":"150.00",
          "precoPromocional":"150.00",
          "oferta":false,
@@ -111,7 +111,7 @@ const dataProdutos = [
     {
         "id":01,
        "produtoNome":"Camiseta",
-       "imageUrl":"./src/img/camiseta1.jpg",
+       "imageUrl":"./assets/img/camiseta1.jpg",
        "preco":"265.00",
        "precoPromocional":"240.00",
        "oferta":true,
@@ -121,7 +121,7 @@ const dataProdutos = [
     {
         "id":02,
        "produtoNome":"Caneca",
-       "imageUrl":"./src/img/caneca.jpg",
+       "imageUrl":"./assets/img/caneca.jpg",
         "preco":"420.00",
        "precoPromocional":"420.00",
        "oferta":false,
@@ -130,7 +130,7 @@ const dataProdutos = [
     {
         "id":03,
        "produtoNome":"Fone",
-       "imageUrl":"./src/img/fone.jpg",
+       "imageUrl":"./assets/img/fone.jpg",
         "preco":"150.00",
        "precoPromocional":"150.00",
        "oferta":false,
@@ -140,7 +140,7 @@ const dataProdutos = [
     {
         "id":04,
         "produtoNome":"Blusa",
-        "imageUrl":"./src/img/blusa.jpg",
+        "imageUrl":"./assets/img/blusa.jpg",
          "preco":"150.00",
         "precoPromocional":"150.00",
         "oferta":false,
@@ -151,7 +151,7 @@ const dataProdutos = [
      {
         "id":05,
         "produtoNome":"Camiseta",
-        "imageUrl":"./src/img/camiseta.jpg",
+        "imageUrl":"./assets/img/camiseta.jpg",
          "preco":"150.00",
         "precoPromocional":"150.00",
         "oferta":false,
@@ -162,7 +162,7 @@ const dataProdutos = [
      {
         "id":06,
         "produtoNome":"Blusa",
-        "imageUrl":"./src/img/blusa.jpg",
+        "imageUrl":"./assets/img/blusa.jpg",
          "preco":"150.00",
         "precoPromocional":"150.00",
         "oferta":false,
@@ -173,7 +173,7 @@ const dataProdutos = [
      {
         "id":07,
         "produtoNome":"Blusa",
-        "imageUrl":"./src/img/blusa.jpg",
+        "imageUrl":"./assets/img/blusa.jpg",
          "preco":"150.00",
         "precoPromocional":"150.00",
         "oferta":false,
@@ -184,7 +184,7 @@ const dataProdutos = [
      {
       "id":07,
       "produtoNome":"Blusa Exemplo",
-      "imageUrl":"./src/img/blusa.jpg",
+      "imageUrl":"./assets/img/blusa.jpg",
        "preco":"150.00",
       "precoPromocional":"150.00",
       "oferta":false,
@@ -195,7 +195,7 @@ const dataProdutos = [
    {
       "id":20,
       "produtoNome":"Fone",
-      "imageUrl":"./src/img/fone.jpg",
+      "imageUrl":"./assets/img/fone.jpg",
        "preco":"150.00",
       "precoPromocional":"150.00",
       "oferta":false,
