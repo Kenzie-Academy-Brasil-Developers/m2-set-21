@@ -2,14 +2,29 @@ const vitrineCarrinho = document.querySelector(".carrinho ul")
 const vitrinePrincipal  = document.querySelector(".vitrineProdutos__vitrine")
 
 
-//1 FUNÇÃO PARA MONTAR TEMPLATE DO PRODUTO *
-  //VALIDAR PRODUTO EM PROMOÇÃO *
-  //PRODUTO EM ESTOQUE  *
-  //TRATAR DO PREÇO *
+
+//CARROSSEL DESTAQUE
+const arrayImagens = ["./assets/img/1.png","./assets/img/2.png","./assets/img/3.png","./assets/img/4.png","./assets/img/5.png","./assets/img/7.png","./assets/img/8.png"]
+const tagImg = document.querySelector(".carrosselDestaque>img")
+
+//FUNÇÃO PARA INICIAR CARROSSEL
+function carrosselStart(arrayImagens, tagImg, time){
   
-//3 FUNÇÃO PARA LISTAR OS PRODUTOS
-//A) PERCORRER O ARRAY DE OBJETOS,PASSANDO O CADA PRODUTO PARA FUNÇÃO TEMPLTE
-//B) ADICIONAR NA VITRINE
+    let contador = 0
+
+    setInterval(function(){
+        
+        if(contador < arrayImagens.length){
+            tagImg.src = arrayImagens[contador]
+            contador++
+        }else{
+            contador = 0
+        }
+       
+    },time)
+
+}
+carrosselStart(arrayImagens,tagImg, 1000)
 
 
 //FUNÇÃO PARA CRIAR TEMPLATE DE PRODUTO => PRECISA RECEBER UM OBJETO PRODUTO
@@ -52,7 +67,8 @@ const templateProduto = ({id,produtoNome,imageUrl,preco,precoPromocional,oferta}
 //vitrine
 
 const listarProdutos = (arrayProdutos, callTemplateProduto, vitrine)=>{
-   
+    
+    vitrine.innerHTML = ""
     arrayProdutos.forEach(function(produto){
         const templateProduto  = callTemplateProduto(produto)
        vitrine.appendChild(templateProduto)
@@ -72,8 +88,33 @@ function interceptandoEvento(evt){
     const buttonComprar = evt.target 
     if(buttonComprar.tagName === "BUTTON"){
 
-        
+        const idProduto  = buttonComprar.getAttribute("data-id")
+        adicionarProdutoCarrinho(idProduto)
 
     }
     
 }
+
+
+//ADICIONAR PRODUTO CARRINHO
+const carrinhoCompra = []
+function adicionarProdutoCarrinho(idProduto){
+
+    const produtoFiltrado  = dataProdutos.find((produto)=>produto.id == idProduto)
+    
+    if(produtoFiltrado.estoque > 1){
+        carrinhoCompra.push(produtoFiltrado)
+        //REAPROVEITANDO A MESMA FUNÇÃO PARA LISTAR 
+        listarProdutos(carrinhoCompra, templateProduto, vitrineCarrinho)
+
+        console.log("Adicionado no carrinho")
+    }   else{
+        console.log("Baixo estoque")
+    }
+    
+}
+
+
+
+
+
