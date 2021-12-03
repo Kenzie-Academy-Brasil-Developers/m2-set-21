@@ -167,26 +167,30 @@ main{
 }
 
 .notificacao{
-    
-    display: inline-block;
+    background-color:transparent;
+    position: fixed;
+    bottom: 20px;
+    left: -100%;
     padding: 20px 30px;
+    border-radius: 5px;
     color: #fff;
     text-transform: uppercase;
-    border-radius: 5px;
-    position: fixed;
-    bottom: 10px;
-    left: -100%;
-    transition: 0.5s;
+    font-weight: bold;
+    z-index: 2;
+    transition: 0.8s;
+    -webkit-box-shadow: 0px 0px 9px 0px #000000; 
+    box-shadow: 0px 0px 9px 0px #000000;
+}
 
+.notificacao.sucees{
+    background-color:#4caf50;
+    left: 20px;
+    transition: 0.8s;
 }
-.notificacao.sucesso{
-    background-color: #8bc34a;
-    left: 10px;
-    transition: 0.5s;
-}
-.notificacao.erro{
+.notificacao.error{
     background-color: red;
-    left: 10px;
-    transition: 0.5s;
+    left: 20px;
+    transition: 0.8s;
 }
-.notificacao span{}
+
+
