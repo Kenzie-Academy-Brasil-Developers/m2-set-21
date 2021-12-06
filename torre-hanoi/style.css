@@ -1,0 +1,114 @@
+html,
+body,
+header,
+footer,
+div,
+p,
+a,
+h2,
+button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    180deg,
+    rgb(73, 12, 153) 0%,
+    rgb(224, 91, 51) 100%
+  );
+  overflow: hidden;
+}
+
+.reset-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 80px;
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+
+  background-color: rgba(29, 47, 107, 0.459);
+  color: whitesmoke;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 100vh;
+  padding: 10px;
+}
+
+#container .torre {
+  background-color: rgb(56, 12, 12);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.248);
+
+  margin-bottom: 60px;
+  width: 30px;
+  height: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+}
+#container .torre .disco {
+  border-radius: 50px;
+  height: 20px;
+}
+#container .torre #disco1 {
+  width: 120px;
+  background-color: orangered;
+}
+#container .torre #disco2 {
+  width: 100px;
+  background-color: yellowgreen;
+}
+#container .torre #disco3 {
+  width: 80px;
+  background-color: purple;
+}
+#container .torre #disco4 {
+  width: 60px;
+  background-color: salmon;
+}
+
+/* TABLETS */
+@media (min-width: 600px) {
+  #container {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/* DESKTOPS */
+@media (min-width: 1024px) {
+  #container .torre {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  #container .torre:hover {
+    transition: all 0.2s;
+    filter: brightness(1.15);
+  }
+
+  footer #container a:hover {
+    color: rgb(36, 36, 36);
+  }
+}
