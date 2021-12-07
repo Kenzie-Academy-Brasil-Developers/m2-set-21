@@ -94,42 +94,19 @@ function interceptandoEvento(evt){
         const idProduto  = buttonComprar.getAttribute("data-id")
         
         //ADICIONA NO CARRINHO
-        adicionarProdutoCarrinho(idProduto)
+        const status = carrinhoCompra.adicionarProdutoCarrinho(idProduto)
         
-        //ATUALIZA INFORMAÇÕES DO CARRINHO
-        atualizarQtdCarrinho()
+        if(status){
+            listarProdutos(carrinhoCompra.produtos, templateProduto, vitrineCarrinho)
+        }
+      
     }
     
 }
 
 
-//*********************************************//
-    //FUNÇÃO PARA ADICIONAR PRODUTOS NO CARRINHO 
-//***********************************************//
-let carrinhoCompra = []
-function adicionarProdutoCarrinho(idProduto){
 
-    //VERIFICA SE PRODUTO ESTÁ NA BASE, SE SIM RETORNA ESSE PRODUTO
-    const produtoFiltrado  = dataProdutos.find((produto)=>produto.id == idProduto)
-    
-    //VERIFICA O ESTOQUE DESSE PRODUTO
-    if(produtoFiltrado.estoque > 1){
-       
-        //ADICIONA PRODUTO NO CARRINHO
-        carrinhoCompra.push(produtoFiltrado)
-       
-        //REAPROVEITANDO A MESMA FUNÇÃO PARA LISTAR 
-        listarProdutos(carrinhoCompra, templateProduto, vitrineCarrinho)
 
-        //NOTIFICA USUÁRIO DA OPERAÇÃO
-        notificacaoAddProduto("Produto adicionado no carrinho", true)
-    }   else{
-
-        //NOTIFICA USUÁRIO DA OPERAÇÃO
-        notificacaoAddProduto("Produto com baixo estoque", false)
-    }
-    
-}
 
 //FUNÇÃO PARA INTERCEPTAR CLIQUE CARRINHO
 const interceptandoEventoCarrinho = (evt) => {
@@ -144,24 +121,6 @@ const interceptandoEventoCarrinho = (evt) => {
     
 }
 vitrineCarrinho.addEventListener("click", interceptandoEventoCarrinho)
-
-//*********************************************//
-    //FUNÇÃO PARA REMOVER PRODUTOS DO CARRINHO
-//***********************************************//
-function removerProdutoCarrinho(idProduto){
-    
-    //PRIMEIRA FORMA DE REMOÇÃO
-    const produtoFiltrado  = carrinhoCompra.find((produto)=>produto.id == idProduto)
-    const index = carrinhoCompra.indexOf(produtoFiltrado)
-    carrinhoCompra.splice(index, 1)
-
-    //SEGUNDA FORMA DE REMOÇÃO 
-    //carrinhoCompra  = carrinhoCompra.filter((produto)=> produto.id !== Number(idProduto))
-
-    //REAPROVEITANDO A MESMA FUNÇÃO PARA LISTAR 
-   listarProdutos(carrinhoCompra, templateProduto, vitrineCarrinho)
-   notificacaoAddProduto("Produto removido com sucesso", true)
-}
 
 
 //*********************************************//

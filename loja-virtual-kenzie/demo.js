@@ -1,59 +1,70 @@
-//const cardProduto  = document.querySelectorAll(".vitrineProdutos__vitrine li button")
 
-// for(let i = 0; i<cardProduto.length; i++){
-    
-//     cardProduto[i].addEventListener("click", adicionarProdutoCarrinho)
 
+
+
+
+const hudson = {
+    nome: "hudson",
+    idade: 25,
+    altura: 1.80,
+    cidade: "Curitiba",
+
+    apresentar(){
+        
+        console.log(`Meu nome é ${this.nome}`)
+    },
+    calculaData(){
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const aluno = {
+//     nome: "Hudson",
+//     idade: 25,
+//     altura: 1.80,
+//     cidade: "Curitiba",
+//     curso:"Front-end",
+//     modulos: ["M1","M2","M3"]
 // }
 
-// cardProduto.forEach(function(buttonComprar){
-//     buttonComprar.addEventListener("click", adicionarProdutoCarrinho)
-// })
+// let jogador1 = " "
+// let jogador2 = " "
+// let pontuacao = " "
 
+// const jogador1 = {
+//     nome: "Hudson",
+//     pontuacao:0,
+//     posicao: {x: 0, y: 0}
+// }
 
-//CONCEITO DE CAPTURING 
-//cardProduto.forEach((buttonComprar)=> buttonComprar.addEventListener("click", adicionarProdutoCarrinho))
-
-
-
-const div1 = document.getElementById("div1")
-div1.addEventListener("click", function(){
-    setTimeout(() => {
-        div1.style.background = "blue"
-    }, 1200);   
-})
-
-const div2 = document.getElementById("div2")
-div2.addEventListener("click", function(){
-    setTimeout(() => {
-        div2.style.background = "blue"
-    }, 1000);
-})
-
-const div3 = document.getElementById("div3")
-div3.addEventListener("click", function(evt){
+// const jogador2 = {
+//     nome: "Maria",
+//     pontuacao:0,
+//     posicao: {x: 0, y: 0},
     
-    setTimeout(() => {
-        div3.style.background = "blue"
-    }, 900);
+//     andarPrafrente(){
+//         console.log("Andou 10 passos")
+//     }
+// }
 
-    
-})
 
-const div4 = document.getElementById("div4")
-div4.addEventListener("click", function(evt){
-    setTimeout(() => {
-        div4.style.background = "blue"
-    }, 800);
-    evt.stopPropagation()
-})
 
-const div5 = document.getElementById("div5")
-div5.addEventListener("click", function(){
-    setTimeout(() => {
-        div5.style.background = "blue"  
-    }, 700);
-   
-})
+
+// const div = document.createElement("div")
+// div.id = "novo id"
+// div.classList.add("novaClasse")
+
 
 
