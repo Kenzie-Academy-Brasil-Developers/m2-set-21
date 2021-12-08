@@ -6,88 +6,67 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Loja da Kenzie</title>
+    <title>Cadastro de pessoas</title>
 </head>
 <body>
     <header>
-        <h1>Loja da Kenzie</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="">Home</a>
-                </li>
-                <li>
-                    <a href="">Camisetas</a>
-                </li>
-                <li>
-                    <a href="">Blusas</a>
-                </li>
-                <li>
-                    <a href="">Oferta</a>
-                </li>
-                <li>
-                    <a href="">Preço</a>
-                </li>
-            </ul>
-        </nav>
+        <h1>Cadastro de pessoas</h1>
     </header>
     <main>
 
-        <section class="carrosselDestaque">
-            <img src="./assets/img/1.png" alt="">
-        </section>
+        <div class="row">
 
-        <section class="vitrineProdutos">
-           
-            <ul class="vitrineProdutos__vitrine"></ul>
+            <div class="col-md">
+                <h2>Cadastrar novo integrante</h2>
+               
+                <form action="#">
 
-            <div class="carrinho">
-                <h2>Carrinho</h2>
-                <ul class="vitrineProdutos__vitrine"></ul>
+                    <input type="text" name="nome" id="nome" placeholder="nome">
 
-                <div class="carrinhoTotal">
-                    <p id="qtdProdutos">QTD Produtos: 0</p>
-                    <p id="precoTotal">Total preço: R$ 00,00</p>
-                    <button>Finalizar Compra</button>
-                    <button>Limpar carrinho</button>
-                </div>
+                    <input type="text" name="sobrenome" id="sobrenome"  placeholder="Sobre nome">
+
+                    <input type="date" name="nascimento" id="nascimento" >
+
+                    <input type="number" name="cpf" id="cpf"  placeholder="CPF">
+
+                    <input type="tel"  name="telefone" id="telefone"  placeholder="Telefone">
+
+                    <input type="email" name="email" id="email"  placeholder="e-mail">
+
+                    <select name="cargo" id="cargo" >
+                        <option value="facilitador">Facilitador</option>
+                        <option value="instrutor">Instrutor</option>
+                        <option value="coache">Coache</option>
+                    </select>
+
+                    <textarea name="mesagem" id="mesagem" placeholder="Observações"></textarea>
+
+                    <button type="submit">Cadastrar</button>
+
+                </form>
+
             </div>
-        </section>
+            <div class="col-md">
+                <h2>Integrantes cadastrados</h2>
+                <div class="filtro">
+                    <button>Facilitador</button>
+                    <button>Instrutor</button>
+                    <button>Coache</button>
+                </div>
+               <ul class="integrantes">
+                  
+               </ul>
 
-        <div class="notificacao">
-            <span>Adicionado produto no carrinho</span>
+            </div>
+
         </div>
-
+    
     </main>
 
-    <section class="divs" hidden>
-        <div id="div1">
-            DIV 1
-            
-            <div id="div2">
-                DIV 2
     
-                <div id="div3">
-                    DIV 3
-    
-                    <div id="div4">
-                        DIV 4
-    
-                        <div id="div5">
-                            DIV 5
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-        
-    
-    <script src="./assets/js/data_produtos.js"></script>
+   
+    <script src="./assets/js/data_base.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/carrinho.js"></script>
-    <!-- <script src="./demo.js"></script> -->
+    <script src="./demo.js"></script>
 </body>
 </html>

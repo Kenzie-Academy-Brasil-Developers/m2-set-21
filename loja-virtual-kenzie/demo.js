@@ -1,70 +1,40 @@
-
-
-
-
-
 const hudson = {
-    nome: "hudson",
-    idade: 25,
-    altura: 1.80,
-    cidade: "Curitiba",
-
-    apresentar(){
-        
-        console.log(`Meu nome é ${this.nome}`)
-    },
-    calculaData(){
-
-    }
+    nome:"Hudson",
+    sobrenome:"Carolino",
 }
 
+//ADICIONANDO NOVA PROPRIEDADE
+const pessoa1 =  {...hudson, idade:25}
+
+//ALTERANDO VALOR DE UMA PROPRIEDADE
+const pessoa3 = {...hudson, sobrenome:"Silva",}
+
+//RENOMEAR UMA PROPRIEDADE 
+const {nome:nomecompleto, sobrenome} = hudson
+
+// console.log(nomecompleto)
+// console.log(sobrenome)
+
+//ARRAY
+let nomes = ["Hudson","Maria","Pedro"]
+
+let [primeiroNome, maria,pedro] = nomes
+
+// console.log(primeiroNome)
+// console.log(maria)
+// console.log(pedro)
+
+let a,b;
+
+[a,b] = [1,2]
+
+[a,b] = [b,a]
 
 
+//
+const array1 = [1,2,3,4,5]
 
-
-
-
-
-
-
-
-
-
-// const aluno = {
-//     nome: "Hudson",
-//     idade: 25,
-//     altura: 1.80,
-//     cidade: "Curitiba",
-//     curso:"Front-end",
-//     modulos: ["M1","M2","M3"]
-// }
-
-// let jogador1 = " "
-// let jogador2 = " "
-// let pontuacao = " "
-
-// const jogador1 = {
-//     nome: "Hudson",
-//     pontuacao:0,
-//     posicao: {x: 0, y: 0}
-// }
-
-// const jogador2 = {
-//     nome: "Maria",
-//     pontuacao:0,
-//     posicao: {x: 0, y: 0},
-    
-//     andarPrafrente(){
-//         console.log("Andou 10 passos")
-//     }
-// }
-
-
-
-
-// const div = document.createElement("div")
-// div.id = "novo id"
-// div.classList.add("novaClasse")
-
-
+const array3 = [...array1, 100] 
+  
+//console.log(array3)
 
