@@ -1,46 +1,34 @@
-//- NOME: STRING
-//- SOBRENOME: STRING
-//- EMAIL: STRING
-//- DATANASCIMENTO:DATA
-//- ID: INT
+import {Funcionario} from './src/models/Funcionario.js'
+import {Instrutor} from './src/models/Instrutor.js'
 
-//CLASSE VAI MODELAR NOSSOS OBJETOS
-class Pessoa {  
 
-    constructor(nome, sobrenome, email, datanascimento){
-     
-        this._nome           = nome,
-        this._sobrenome      = sobrenome,
-        this._email          = email,
-        this._datanascimento = datanascimento,
-        this._status         = false
-    }
+    const Novofuncionario = new Funcionario(
+        "Hudson", 
+        "Carolino",
+        "hudson@gmail.com",
+        "108.266.049-32",
+        "31/10/1996",
+        "Instrutor"
+    )
 
-    get nome(){
+    //console.log(Novofuncionario.nomeCompleto())
 
-        return this._nome
+    
+    const novoInstrutor = new Instrutor(
+        "Hudson", 
+        "Carolino",
+        "hudson@gmail.com",
+        "108.266.049-32",
+        "31/10/1996",
+        "M1"
+    )
 
-    }
-
-    set nome(novoNome){
-
-        this._nome = novoNome
-        
-    }
-
-}
-
-const pessoa = new Pessoa("Hudson", "Carolino", "hudson@gmail.com", "31101996")
-
-pessoa.nome = "Hudson Gabriel"
-
-console.log(pessoa.nome)
+    console.log(novoInstrutor.nomeCompletoInstrutor())
+    //console.log(novoInstrutor.getStatus())
 
 
 
-
-
-
+//INSTRUTOR
 
 
 
