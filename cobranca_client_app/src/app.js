@@ -1,11 +1,12 @@
 import {RotaCliente} from "./routes/rotaCliente.js"
 import {RotaCobranca} from "./routes/rotaCobrancas.js"
+import {Quadro} from "./models/Quadro.js"
 
 const form = document.querySelector("body")
 
 form.addEventListener("submit", pegarDadosInput)
 
-function pegarDadosInput(event){
+async function pegarDadosInput(event){
     event.preventDefault()
     const formName = event.target.name
     const inputs   = event.target
@@ -24,17 +25,32 @@ function pegarDadosInput(event){
 
     if(formName == "cliente"){
        
-        console.log(RotaCliente.post(dataForm))
+        const resposta  = await RotaCliente.post(dataForm)
+        iniciarAplicacao()
 
     }else{
-        RotaCobranca.post(dataForm)
-        console.log(dataForm)
+
+        const resposta  = await RotaCobranca.post(dataForm) 
+        iniciarAplicacao()
     }
     
 }
 
-//const resposta = await RotaCliente.get()
-const resposta = await RotaCobranca.get()
-console.log(resposta)
+function iniciarAplicacao(){
+    
+    RotaCliente.get().then((clientes)=>{
+
+        Quadro.atualizarClientes(clientes)
+       
+    })
+    
+    RotaCobranca.get().then((cobrancas)=>{
+
+        Quadro.atualizarCobrancas(cobrancas)
+       
+    })
+
+}
+iniciarAplicacao()
 
 
