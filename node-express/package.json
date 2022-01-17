@@ -1,0 +1,14 @@
+{
+  "name": "demo-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/app.js"
+  },
+  "author": "Hudson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
