@@ -1,0 +1,52 @@
+{
+  "movies": [
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    },
+    {
+      "title": "Harry Potter",
+      "duration": "1:30",
+      "synopsis": "teste",
+      "imdb": 4.8
+    }
+  ]
+}
