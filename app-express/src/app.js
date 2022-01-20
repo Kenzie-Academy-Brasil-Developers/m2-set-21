@@ -1,12 +1,27 @@
+const { response } = require('express')
 const express = require('express')
-//SERVER
-const app     = express()
-const port    = 3000
+const app  = express()
+app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.send('Olá Hudson!')
+
+//IMPORTANTO ROTAS
+const routerCliente = require("./routes/Cliente")
+
+//CONFIGURANDO ROTAS
+app.use('/clientes', routerCliente)
+
+app.get('/', (req, resposta) => {
+    resposta.send('Seja bem-vindo ao app!')
 })
 
-app.listen("3000", () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+module.exports = app
+
+
+
+
+
+
+
+
+
+
