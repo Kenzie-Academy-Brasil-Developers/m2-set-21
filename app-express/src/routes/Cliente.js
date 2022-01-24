@@ -8,7 +8,6 @@ const ClienteController = require("./../controllers/Cliente")
 //MÉTODO GET/CLIENTES SERVINDO INFOMRAÇÕS PARA O FRONT-END
 router.get('', (req, response)=>{
 
-    console.log(req.query)
     const clientes = ClienteController.retornarClientes()
     response.status(200).json(clientes)
 
@@ -28,7 +27,6 @@ router.get('/:id', (req, response)=>{
     }
 
 })
-
 
 
 //MÉTODO POST/CLIENTES RECEBENDO INFOMRAÇÕS DO FRONT-END
@@ -59,6 +57,16 @@ router.delete('/:id', (req, response)=>{
     }
 
 })
+
+router.patch("/:id", (request,response) => {
+    const {id} = request.params
+    const data = request.body
+  
+    const novoData  = ClienteController.editarCliente(id,data)
+    
+    response.status(201).json(novoData)
+  
+ })
 
 
 
